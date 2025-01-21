@@ -1,0 +1,1256 @@
+:root {
+    --primary-color: #1e1e2f;
+    --secondary-color: #618bff;
+    --text-color: #ffffff;
+    --light-text: #f0f0f0;
+    --dark-bg: #121212;
+    --navy-bg: #1e1e2f;
+    --white: #ffffff;
+    --card-bg: #2a2a2a;
+    --hover-color: #6161ff;
+    --glass-bg: rgba(30, 30, 47, 0.8);
+    --button-padding: 1rem 2rem;
+    --button-font-size: 1rem;
+    --button-bg-color: #6186ff;
+    --button-border-radius: 30px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.8;
+    color: var(--text-color);
+    background-color: var(--dark-bg);
+    cursor: url('assets/custom_cursor_interact.png'), auto; /* Custom cursor for body */
+}
+
+/* Header and Navigation */
+header {
+    background: rgba(10, 25, 47, 0.4);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--white);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s;
+    cursor: url('assets/custom_cursor_interact.png'), auto; /* Custom cursor for specific elements */
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+    text-shadow: 0 0 8px rgba(100, 255, 218, 0.3);
+}
+
+/* Sections */
+section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    position: relative;
+    z-index: 1;
+    background: rgba(10, 25, 47, 0.3);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid var(--glass-border);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px 0 var(--glass-shadow);
+    transition: transform 0.3s ease, z-index 0.3s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: var(--light-text);
+    text-shadow: 0 0 10px rgba(100, 255, 218, 0.1);
+}
+
+/* Hero Section */
+.hero {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--dark-bg);
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+    cursor: url('assets/custom_cursor_interact.png'), auto; /* Custom cursor for hero section */
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--light-text);
+}
+
+.highlight {
+    color: var(--secondary-color);
+}
+
+.title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.social-links {
+    margin-top: 2rem;
+}
+
+.social-links a {
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    color: var(--secondary-color);
+    transition: color 0.3s;
+    cursor: url('assets/custom_cursor_interact.png'), auto; /* Custom cursor for specific elements */
+}
+
+.social-links a:hover {
+    color: var(--white);
+}
+
+/* Projects Section */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--blur-amount));
+    -webkit-backdrop-filter: blur(var(--blur-amount));
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+    transition: transform 0.3s;
+    cursor: url('assets/custom_cursor_interact.png'), auto; /* Custom cursor for specific elements */
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 30px -15px rgba(2, 12, 27, 0.7);
+    border-color: var(--secondary-color);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    padding: 1rem;
+}
+
+.project-card p {
+    padding: 0 1rem 1rem;
+}
+
+.project-links {
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--blur-amount));
+    -webkit-backdrop-filter: blur(var(--blur-amount));
+    border: 1px solid var(--glass-border);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    cursor: url('assets/custom_cursor_interact.png'), auto; /* Custom cursor for specific elements */
+}
+
+.skill-category h3 {
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.skill-category ul {
+    list-style: none;
+}
+
+.skill-category li {
+    margin: 0.5rem 0;
+}
+
+/* Contact Section */
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input, textarea {
+    padding: 1rem;
+    border: 1px solid var(--glass-border);
+    border-radius: 5px;
+    font-size: 1rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--blur-amount));
+    -webkit-backdrop-filter: blur(var(--blur-amount));
+    color: var(--light-text);
+    cursor: url('assets/custom_cursor_interact.png'), auto; /* Custom cursor for specific elements */
+}
+
+textarea {
+    min-height: 150px;
+}
+
+.cta-button {
+    padding: 1.5rem 2.5rem;
+    background-color: rgba(100, 255, 218, 0.1);
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+    border-radius: 5px;
+    cursor: url('assets/custom_cursor_interact.png'), auto; /* Custom cursor for specific elements */
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.cta-button:hover {
+    background-color: rgba(100, 255, 218, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--blur-amount));
+    -webkit-backdrop-filter: blur(var(--blur-amount));
+    border-top: 1px solid var(--glass-border);
+    color: var(--text-color);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column; /* Stack links vertically */
+        align-items: center; /* Center align links */
+        display: none; /* Hide by default */
+    }
+
+    .nav-links.active {
+        display: flex; /* Show when active */
+    }
+
+    .hero h1 {
+        font-size: 2.5rem; /* Smaller font size for mobile */
+    }
+
+    section {
+        padding: 3rem 1rem; /* Adjust padding for smaller screens */
+    }
+
+    .cta-button {
+        padding: 1rem; /* Adjust button padding */
+        font-size: 1rem; /* Adjust button font size */
+    }
+
+    .social-links a {
+        font-size: 1.2rem; /* Adjust social link size */
+        margin: 0 0.5rem; /* Adjust margin */
+    }
+
+    .project-card {
+        margin: 1rem 0; /* Add margin for spacing */
+    }
+
+    .about-text {
+        font-size: 1rem; /* Adjust font size for about section */
+    }
+}
+
+/* Add this to your existing CSS */
+.profile-bowl {
+    width: 220px; /* Slightly larger than the profile picture */
+    height: 220px; /* Same as the profile picture */
+    border-radius: 50%; /* Make it circular */
+    overflow: hidden; /* Hide overflow */
+    position: relative; /* Position relative for the pseudo-element */
+    border: 5px solid rgba(100, 255, 218, 0.5); /* Bowl border */
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.5); /* Shadow for depth */
+}
+
+.profile-bowl::before {
+    content: '';
+    position: absolute;
+    top: -20px; /* Adjust to create a bowl effect */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 25, 47, 0.3); /* Bowl background */
+    border-radius: 50%; /* Make it circular */
+    z-index: -1; /* Place behind the profile picture */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+.profile-picture {
+    display: inline-block; /* Allow for transformation */
+    transition: transform 0.5s ease; /* Smooth transition for the spin */
+}
+
+.profile-picture:hover .profile-img {
+    animation: spin 1s forwards, moonEffect 1s forwards; /* Apply spin and moon effect on hover */
+}
+
+/* Spin animation */
+@keyframes spin {
+    from {
+        transform: rotate(0deg); /* Start at 0 degrees */
+    }
+    to {
+        transform: rotate(360deg); /* Complete a full rotation */
+    }
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* Make it circular */
+    overflow: hidden; /* Hide overflow */
+    position: relative; /* Position relative for the image */
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire area */
+    transition: transform 0.3s; /* Smooth scaling effect */
+}
+
+.profile-picture:hover img {
+    transform: scale(1.1); /* Slightly zoom in on hover */
+}
+
+/* Update the About Section styling */
+.about {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--blur-amount));
+    -webkit-backdrop-filter: blur(var(--blur-amount));
+    padding: 6rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(100, 255, 218, 0.1), transparent 50%);
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+.about-text p {
+    margin-bottom: 2rem;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.about h2:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--secondary-color);
+}
+
+/* Update the Get in Touch button styling */
+.about .cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+.about .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Add gradient overlay to sections */
+.projects::before, .skills::before, .contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(100, 255, 218, 0.1), transparent 50%);
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+/* Add these animation styles to your existing CSS */
+
+/* Scroll Reveal Animations */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Add slide-in animations for different directions */
+.slide-left {
+    transform: translateX(-100px);
+}
+
+.slide-right {
+    transform: translateX(100px);
+}
+
+/* Add scale animation for cards */
+.project-card.scroll-reveal {
+    transform: scale(0.8) translateY(50px);
+}
+
+.project-card.scroll-reveal.revealed {
+    transform: scale(1) translateY(0);
+}
+
+/* Add floating animation for skill categories */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.skill-category.revealed {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Add smooth parallax effect */
+.parallax {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform;
+    position: relative;
+    z-index: 1;
+}
+
+/* Add wave effect for sections */
+@keyframes wave {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+section:hover {
+    animation: none;
+    background: rgba(10, 25, 47, 0.3) !important;
+}
+
+/* Section-specific animations */
+section.scroll-reveal {
+    transform: translateY(50px);
+}
+
+.project-card.scroll-reveal {
+    transition-delay: calc(var(--order) * 0.1s);
+}
+
+.skill-category.scroll-reveal {
+    transition-delay: calc(var(--order) * 0.2s);
+}
+
+/* Smooth section transitions */
+section {
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+/* Smooth hover transitions */
+.nav-links a,
+.social-links a,
+.cta-button,
+.project-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Add smooth transition to all interactive elements */
+a, button, input, textarea {
+    transition: all 0.3s ease;
+}
+
+/* Add smooth background transitions */
+.hero,
+.about,
+.projects,
+.skills,
+.contact {
+    transition: background-color 0.5s ease;
+}
+
+/* Add smooth shadow transitions */
+.project-card,
+.skill-category {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Add smooth gradient transitions */
+section::before {
+    transition: opacity 0.5s ease;
+}
+
+/* Add stagger effect to project cards */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card:nth-child(1) { --order: 1; }
+.project-card:nth-child(2) { --order: 2; }
+.project-card:nth-child(3) { --order: 3; }
+.project-card:nth-child(4) { --order: 4; }
+
+/* Add stagger effect to skill categories */
+.skill-category:nth-child(1) { --order: 1; }
+.skill-category:nth-child(2) { --order: 2; }
+.project-card:nth-child(3) { --order: 3; }
+.project-card:nth-child(4) { --order: 4; }
+
+/* Add scroll progress indicator */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(
+        to right,
+        rgba(100, 255, 218, 0.5),
+        rgba(128, 255, 234, 0.5)
+    );
+    backdrop-filter: blur(var(--blur-amount));
+    z-index: 1001;
+    transition: width 0.3s ease;
+}
+
+/* Optimize performance with GPU acceleration */
+.hero,
+.about,
+.projects,
+.skills,
+.contact {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Add typing animation styles */
+.greeting {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid var(--secondary-color);
+    animation: 
+        typing 1s steps(8) forwards,
+        blink-caret 0.75s step-end infinite;
+}
+
+.typing-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    border-right: 2px solid var(--secondary-color);
+    animation: 
+        typing-name 2s steps(25) forwards,
+        blink-caret 0.75s step-end infinite;
+    max-width: 100%;
+}
+
+/* Update subtitle and title animations */
+.subtitle, .title {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out 2s forwards;
+}
+
+/* Add new keyframes for disappearing and reappearing */
+@keyframes disappear {
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes reappear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+        width: 0;
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        width: 0;
+    }
+}
+
+/* Update existing keyframes */
+@keyframes typing {
+    0% { width: 0 }
+    100% { width: 100% }
+}
+
+@keyframes typing-name {
+    0% { width: 0 }
+    100% { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--secondary-color) }
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Update hero content styles */
+.hero-content h1 {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--light-text);
+}
+
+/* Add ocean background styles */
+.ocean-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background: linear-gradient(to bottom, rgba(10, 25, 47, 0.1) 0%, rgba(10, 25, 47, 0.15) 100%);
+    animation: wave 10s ease-in-out infinite; /* Add wave animation */
+}
+
+@keyframes wave {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 0%;
+    }
+}
+
+/* Fish styles and animations */
+.fish {
+    position: absolute;
+    font-size: 2rem; /* Size of the fish emoji */
+    animation: swim 5s linear infinite; /* Swimming animation */
+    z-index: 0; /* Behind other elements */
+}
+
+/* Fish swimming animation */
+@keyframes swim {
+    0% {
+        transform: translate(0, 0) rotate(0deg); /* Start at original position */
+    }
+    100% {
+        transform: translate(var(--random-x), var(--random-y)) rotate(360deg); /* Move to random position and rotate */
+    }
+}
+
+/* Add multiple fish */
+.fish1 {
+    top: 20%; /* Positioning */
+    left: 0; /* Start from the left */
+}
+
+.fish2 {
+    top: 40%; /* Positioning */
+    left: -10%; /* Start from the left */
+    animation-delay: 1s; /* Delay for staggered effect */
+}
+
+.fish3 {
+    top: 60%; /* Positioning */
+    left: -20%; /* Start from the left */
+    animation-delay: 2s; /* Delay for staggered effect */
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem; /* Smaller font size for mobile */
+    }
+    .nav-links {
+        flex-direction: column; /* Stack links vertically */
+    }
+}
+
+.bubble {
+    position: absolute;
+    width: 25px; /* Base size of the bubble */
+    height: 25px; /* Base size of the bubble */
+    background: radial-gradient(circle, rgba(100, 255, 218, 0.8) 0%, rgba(100, 255, 218, 0.4) 70%); /* Gradient for depth */
+    border-radius: 50%; /* Make it circular */
+    box-shadow: 0 0 10px rgba(100, 255, 218, 0.5); /* Soft shadow for depth */
+    animation: rise 5s infinite, float 3s ease-in-out infinite; /* Combine animations */
+    opacity: 0.8; /* Slightly transparent */
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0) scale(1); /* Start at original size */
+        opacity: 0.8; /* Start slightly transparent */
+    }
+    50% {
+        transform: translateY(-50px) scale(1.1); /* Move up and slightly grow */
+        opacity: 1; /* Become fully visible */
+    }
+    100% {
+        transform: translateY(-100px) scale(0.9); /* Move up and shrink */
+        opacity: 0; /* Fade out */
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(5px); /* Slight horizontal movement */
+    }
+    100% {
+        transform: translateX(-5px); /* Slight horizontal movement */
+    }
+}
+
+/* Updated Fade-in effect */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Updated classes for scrolling down and up */
+.scroll-down {
+    animation: slideDown 0.6s ease forwards;
+}
+
+.scroll-up {
+    animation: slideUp 0.6s ease forwards;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Add this to your existing CSS */
+
+/* Base styles for sections */
+section {
+    position: relative; /* Allow positioning for overlap */
+    z-index: 1; /* Default z-index */
+    transition: transform 0.3s ease, z-index 0.3s ease; /* Smooth transition for transform and z-index */
+}
+
+/* Overlapping effect when scrolling down */
+.scroll-down {
+    transform: translateY(10px); /* Move down slightly */
+    z-index: 0; /* Send it behind */
+}
+
+/* Overlapping effect when scrolling up */
+.scroll-up {
+    transform: translateY(-10px); /* Move up slightly */
+    z-index: 2; /* Bring it in front */
+}
+
+/* Base button styles */
+.button, .cta-button {
+    display: inline-block;
+    padding: var(--button-padding);
+    font-size: var(--button-font-size);
+    color: var(--text-color);
+    background-color: var(--button-bg-color);
+    border: 2px solid transparent; /* Transparent border */
+    border-radius: var(--button-border-radius);
+    cursor: url('assets/custom_cursor_interact.png'), auto; /* Custom cursor for specific elements */
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    overflow: visible; /* Allow overflow for twinkling effect */
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Twinkling stars effect using emojis */
+.button::before, .cta-button::before {
+    content: '⭐'; /* Emoji for twinkling effect */
+    position: absolute;
+    top: -30%; /* Move up to overlap the UI */
+    left: 10%; /* Positioning */
+    font-size: 1.5rem; /* Size of the emoji */
+    animation: twinkle 1.5s infinite alternate, twitch 0.3s infinite, spin 4s linear infinite; /* Twinkle, twitch, and spin animation */
+    opacity: 0; /* Start invisible */
+    z-index: 1; /* Bring to front */
+}
+
+.button::after, .cta-button::after {
+    content: '✨'; /* Another emoji for twinkling effect */
+    position: absolute;
+    top: 60%; /* Adjust positioning */
+    left: 70%; /* Positioning */
+    font-size: 1.5rem; /* Size of the emoji */
+    animation: twinkle 1.5s infinite alternate, twitch 0.3s infinite, spin 4s linear infinite; /* Twinkle, twitch, and spin animation */
+    opacity: 0; /* Start invisible */
+    z-index: 1; /* Bring to front */
+}
+
+/* Twinkle animation */
+@keyframes twinkle {
+    0% {
+        opacity: 0; /* Start invisible */
+    }
+    50% {
+        opacity: 1; /* Fully visible */
+    }
+    100% {
+        opacity: 0; /* Return to invisible */
+    }
+}
+
+/* Twitch animation */
+@keyframes twitch {
+    0%, 100% {
+        transform: translate(0); /* No movement */
+    }
+    20% {
+        transform: translate(-2px, -2px); /* Move slightly up and left */
+    }
+    40% {
+        transform: translate(2px, 2px); /* Move slightly down and right */
+    }
+    60% {
+        transform: translate(-2px, 2px); /* Move slightly up and right */
+    }
+    80% {
+        transform: translate(2px, -2px); /* Move slightly down and left */
+    }
+}
+
+/* Spin animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg); /* Start at 0 degrees */
+    }
+    100% {
+        transform: rotate(360deg); /* Complete a full rotation */
+    }
+}
+
+/* Show stars only on hover and active */
+.button:hover::before, .cta-button:hover::before,
+.button:hover::after, .cta-button:hover::after,
+.button:active::before, .cta-button:active::before,
+.button:active::after, .cta-button:active::after {
+    opacity: 1; /* Make stars visible on hover or active */
+}
+
+/* Active effect */
+.button:active, .cta-button:active {
+    transform: translateY(1px); /* Slight press effect */
+    box-shadow: none; /* Remove shadow effect */
+}
+
+/* Scale down the black rectangle on hover */
+.button:hover::after, .cta-button:hover::after {
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+/* Star background styles */
+.star-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allow clicks to pass through */
+    z-index: -1; /* Behind other elements */
+}
+
+.star {
+    position: absolute;
+    font-size: 1.5rem; /* Size of the star emoji */
+    animation: twinkle 2s infinite; /* Twinkle animation */
+    opacity: 0; /* Start invisible */
+}
+
+/* Random positioning for stars */
+.star:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
+.star:nth-child(2) { top: 30%; left: 50%; animation-delay: 0.5s; }
+.star:nth-child(3) { top: 50%; left: 30%; animation-delay: 1s; }
+.star:nth-child(4) { top: 70%; left: 80%; animation-delay: 1.5s; }
+.star:nth-child(5) { top: 20%; left: 70%; animation-delay: 2s; }
+.star:nth-child(6) { top: 60%; left: 10%; animation-delay: 2.5s; }
+
+/* Twinkle animation */
+@keyframes twinkle {
+    0% {
+        opacity: 0; /* Start invisible */
+    }
+    50% {
+        opacity: 1; /* Fully visible */
+    }
+    100% {
+        opacity: 0; /* Return to invisible */
+    }
+}
+
+/* Fish background styles */
+.fish-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allow clicks to pass through */
+    z-index: -1; /* Behind other elements */
+}
+
+.fish {
+    position: absolute;
+    font-size: 2rem; /* Size of the fish emoji */
+    animation: swim 10s linear infinite; /* Swimming animation */
+    z-index: 0; /* Behind other elements */
+}
+
+/* Fish swimming animation */
+@keyframes swim {
+    0% {
+        transform: translate(0, 0); /* Start at original position */
+    }
+    100% {
+        transform: translate(var(--random-x), var(--random-y)); /* Move to random position */
+    }
+}
+
+/* Add multiple fish */
+.fish1 {
+    top: 20%; /* Positioning */
+    left: 0; /* Start from the left */
+}
+
+.fish2 {
+    top: 40%; /* Positioning */
+    left: -10%; /* Start from the left */
+    animation-delay: 1s; /* Delay for staggered effect */
+}
+
+.fish3 {
+    top: 60%; /* Positioning */
+    left: -20%; /* Start from the left */
+    animation-delay: 2s; /* Delay for staggered effect */
+}
+
+/* Moon effect animation */
+@keyframes moonEffect {
+    0% {
+        content: url('./assets/profile.jpg'); /* Original profile picture */
+        transform: scale(1); /* Original size */
+    }
+    50% {
+        content: url('./assets/moon.png'); /* Change to moon image */
+        transform: scale(1.2); /* Slightly enlarge */
+    }
+    100% {
+        content: url('./assets/profile.jpg'); /* Revert back to original */
+        transform: scale(1); /* Original size */
+    }
+}
+
+/* Add new keyframes for scattering stars */
+@keyframes scatter {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(var(--random-x), var(--random-y)) scale(1.5);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+/* Update button styles to include star effect */
+.button, .cta-button {
+    position: relative; /* Allow positioning for stars */
+    overflow: visible; /* Allow stars to overflow */
+}
+
+/* Adjust the star emoji positioning */
+.button::before, .cta-button::before,
+.button::after, .cta-button::after {
+    content: '⭐'; /* Emoji for twinkling effect */
+    position: absolute;
+    top: -30px; /* Adjust to pull the star above the button */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, 0); /* Center the star */
+    opacity: 0; /* Start invisible */
+}
+
+/* Star animation class */
+.star-animation {
+    position: absolute;
+    font-size: 2.5rem; /* Increase size for better visibility */
+    animation: scatter 0.5s forwards; /* Apply scatter animation */
+    opacity: 1; /* Start fully visible */
+    pointer-events: none; /* Prevent interaction */
+    z-index: 10; /* Ensure stars are above other elements */
+}
+
+/* Add new keyframes for exploding stars */
+@keyframes explode {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(var(--random-x), var(--random-y)) scale(1.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+/* Star animation class */
+.star-animation {
+    position: absolute;
+    font-size: 2.5rem; /* Increase size for better visibility */
+    animation: explode 0.5s forwards; /* Apply explode animation */
+    opacity: 1; /* Start fully visible */
+    pointer-events: none; /* Prevent interaction */
+    z-index: 10; /* Ensure stars are above other elements */
+}
+
+/* Add this to your existing CSS */
+@keyframes shake {
+    0% { transform: translate(0); }
+    25% { transform: translate(-5px, 0); }
+    50% { transform: translate(5px, 0); }
+    75% { transform: translate(-5px, 0); }
+    100% { transform: translate(0); }
+}
+
+.shake {
+    animation: shake 0.5s ease forwards; /* Apply shake animation */
+}
+
+/* Add this to your existing CSS */
+@keyframes shake-profile {
+    0% { transform: translate(0); }
+    25% { transform: translate(-5px, 0); }
+    50% { transform: translate(5px, 0); }
+    75% { transform: translate(-5px, 0); }
+    100% { transform: translate(0); }
+}
+
+.profile-picture.shake {
+    animation: shake-profile 0.5s ease forwards; /* Apply shake animation */
+}
+
+/* Add this to your existing CSS */
+@keyframes fall {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(100vh); } /* Move down the full height of the viewport */
+}
+
+.fall {
+    animation: fall 1s ease forwards; /* Apply fall animation */
+}
+
+.logo-img {
+    height: 50px; /* Adjust height as needed */
+    width: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure it displays as a block element */
+}
+
+/* Fireworks styles */
+.firework {
+    position: fixed;
+    font-size: 30px; /* Adjust size as needed */
+    pointer-events: none; /* Prevent interaction */
+    animation: explode 1s forwards;
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+#fireworks-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.firework {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: red;
+    border-radius: 50%;
+    animation: explode 1s ease-out;
+}
+
+@keyframes explode {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(0); opacity: 0; }
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bahinting, Cyrus Dale C. - Portfolio</title>
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <div class="ocean-background">
+        <div class="bubbles">
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+        </div>
+    </div>
+
+    <div id="fireworks-container"></div>
+
+    <header>
+        <nav>
+            <div class="logo">QUARIM</div>
+            <div class="mobile-menu" onclick="toggleMenu()">☰</div>
+            <ul class="nav-links">
+                <li><a href="#home" aria-label="Home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about" aria-label="About"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="#projects" aria-label="Projects"><i class="fas fa-folder"></i> Projects</a></li>
+                <li><a href="#skills" aria-label="Skills"><i class="fas fa-cogs"></i> Skills</a></li>
+                <li><a href="#contact" aria-label="Contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="profile-bowl">
+                    <div class="profile-picture" id="profile-picture">
+                        <img src="./assets/profile.jpg" alt="Profile Picture" class="profile-img">
+                    </div>
+                </div>
+                <h1>
+                    <span class="greeting">Hi, I'm</span> 
+                    <span class="highlight typing-text">Bahinting, Cyrus Dale C.</span>
+                </h1>
+                <p class="subtitle">I DO ART!</p>
+                <p class="title">DEV for FUN!</p>
+                <div class="social-links">
+                    <a href="https://github.com/CyR-Y" target="_blank" aria-label="GitHub Profile">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/cyrus-bahinting-a21a35345/" target="_blank" title="LinkedIn Profile">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://x.com/CyrusBahinting" target="_blank" title="Twitter Profile">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about scroll-reveal">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a Senior High School student in La Salle University of Ozamis that has too much time</p>
+                    <a href="#contact" class="cta-button">Get in Touch</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects scroll-reveal">
+            <h2>My Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Title Proposal">
+                    <h3>Title Proposal</h3>
+                    <p>Research proposal document for academic review</p>
+                    <div class="project-links">
+                        <a href="https://docs.google.com/document/d/1Z3Z905DRNwYn1uone9HvhQFUisyjYLjwjJpmkMf4BD4/edit?usp=sharing" 
+                           class="button" 
+                           target="_blank" 
+                           rel="noopener noreferrer">
+                            View Document
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Batch Hide Files">
+                    <h3>Batch Hide Files</h3>
+                    <p>A batch file that allows you to hide files on Windows.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/CyR-Y/Batch-Hide_files" 
+                           class="button" 
+                           target="_blank" 
+                           rel="noopener noreferrer">
+                            View on GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Portfolio Website">
+                    <h3>Portfolio Website</h3>
+                    <p>A personal portfolio website showcasing skills and projects.</p>
+                    <div class="project-links">
+                        <a href="#" class="button" target="_blank" rel="noopener noreferrer">
+                            View Portfolio
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Pac-Man Game">
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Current Status</h3>
+                    <ul>
+                        <li>JavaScript</li>
+                        <li>Python </li>
+                        <li>Css</li>
+                        <li>GDScript</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contact Me</h2>
+            <div class="contact-content">
+                <form id="contact-form">
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Message" required></textarea>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+        <button id="fireworks-button" class="cta-button">Click for Fireworks!</button>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Bahinting, Cyrus Dale C. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

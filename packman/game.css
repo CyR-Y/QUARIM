@@ -1,0 +1,58 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+}
+
+.game-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background-color: #222;
+    border: 2px solid #fff;
+    overflow: hidden;
+}
+
+.pacman {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: yellow;
+    border-radius: 50%;
+    transition: transform 0.1s;
+}
+
+.ghost {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    border-radius: 50%;
+    transition: transform 0.1s;
+}
+
+.food {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    animation: blink 1s infinite;
+}
+
+.wall {
+    position: absolute;
+    background-color: blue; /* Wall color */
+}
+
+.food:nth-child(2) { top: 50px; left: 100px; }
+.food:nth-child(3) { top: 150px; left: 200px; }
+.food:nth-child(4) { top: 300px; left: 50px; }
+.food:nth-child(5) { top: 250px; left: 300px; }
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
