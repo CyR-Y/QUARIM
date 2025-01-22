@@ -914,26 +914,10 @@ section {
 }
 
 /* Twinkling stars effect using emojis */
-.button::before, .cta-button::before {
-    content: '⭐'; /* Emoji for twinkling effect */
-    position: absolute;
-    top: -30%; /* Move up to overlap the UI */
-    left: 10%; /* Positioning */
-    font-size: 1.5rem; /* Size of the emoji */
-    animation: twinkle 1.5s infinite alternate, twitch 0.3s infinite, spin 4s linear infinite; /* Twinkle, twitch, and spin animation */
-    opacity: 0; /* Start invisible */
-    z-index: 1; /* Bring to front */
-}
-
+.button::before, .cta-button::before,
 .button::after, .cta-button::after {
-    content: '✨'; /* Another emoji for twinkling effect */
-    position: absolute;
-    top: 60%; /* Adjust positioning */
-    left: 70%; /* Positioning */
-    font-size: 1.5rem; /* Size of the emoji */
-    animation: twinkle 1.5s infinite alternate, twitch 0.3s infinite, spin 4s linear infinite; /* Twinkle, twitch, and spin animation */
-    opacity: 0; /* Start invisible */
-    z-index: 1; /* Bring to front */
+    content: ''; /* Remove this line */
+    /* Other styles */
 }
 
 /* Twinkle animation */
@@ -1123,7 +1107,7 @@ section {
 /* Adjust the star emoji positioning */
 .button::before, .cta-button::before,
 .button::after, .cta-button::after {
-    content: '⭐'; /* Emoji for twinkling effect */
+    content: ''; /* Remove this line */
     position: absolute;
     top: -30px; /* Adjust to pull the star above the button */
     left: 50%; /* Center horizontally */
@@ -1155,16 +1139,6 @@ section {
         transform: scale(0);
         opacity: 0;
     }
-}
-
-/* Star animation class */
-.star-animation {
-    position: absolute;
-    font-size: 2.5rem; /* Increase size for better visibility */
-    animation: explode 0.5s forwards; /* Apply explode animation */
-    opacity: 1; /* Start fully visible */
-    pointer-events: none; /* Prevent interaction */
-    z-index: 10; /* Ensure stars are above other elements */
 }
 
 /* Add this to your existing CSS */
@@ -1253,4 +1227,34 @@ section {
 @keyframes explode {
     0% { transform: scale(1); opacity: 1; }
     100% { transform: scale(0); opacity: 0; }
+}
+
+#explosion-container {
+    position: absolute;
+    pointer-events: none; /* Prevent interaction */
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.explosion {
+    position: absolute;
+    width: 20px; /* Adjust size for smaller explosions */
+    height: 20px; /* Adjust size for smaller explosions */
+    background-image: url('path/to/star.png'); /* Ensure this path is correct */
+    background-size: cover;
+    animation: explode 0.5s forwards; /* Animation for explosion */
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(2);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
 }

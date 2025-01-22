@@ -58,6 +58,33 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
+
+    const explosionButton = document.getElementById('explosion-button');
+    const explosionContainer = document.getElementById('explosion-container');
+
+    explosionButton.addEventListener('click', (event) => {
+        const explosionCount = 10; // Number of smaller explosions
+        const rect = explosionButton.getBoundingClientRect();
+
+        for (let i = 0; i < explosionCount; i++) {
+            const explosion = document.createElement('div');
+            explosion.classList.add('explosion');
+
+            // Randomize position around the button
+            const offsetX = (Math.random() - 0.5) * 100; // Random offset in X direction
+            const offsetY = (Math.random() - 0.5) * 100; // Random offset in Y direction
+
+            explosion.style.left = `${rect.left + rect.width / 2 + offsetX}px`;
+            explosion.style.top = `${rect.top + rect.height / 2 + offsetY}px`;
+
+            explosionContainer.appendChild(explosion);
+
+            // Remove the explosion after the animation
+            explosion.addEventListener('animationend', () => {
+                explosion.remove();
+            });
+        }
+    });
 });
 
 function createFirework(x, y) {
