@@ -1,23 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Dynamic loading of projects
-    fetch('projects.json')
+    const username = 'CyR-Y'; // Your GitHub username
+    const projectGrid = document.querySelector('.project-grid');
+
+    // Fetch repositories from GitHub
+    fetch(`https://api.github.com/users/${username}/repos`)
         .then(response => response.json())
-        .then(data => {
-            const projectGrid = document.querySelector('.project-grid');
-            data.projects.forEach(project => {
+        .then(repos => {
+            repos.forEach(repo => {
                 const projectCard = document.createElement('div');
                 projectCard.classList.add('project-card');
                 projectCard.innerHTML = `
-                    <img src="${project.image}" alt="${project.title}">
-                    <h3>${project.title}</h3>
-                    <p>${project.description}</p>
+                    <h3>${repo.name}</h3>
+                    <p>${repo.description || 'No description available.'}</p>
                     <div class="project-links">
-                        <a href="${project.link}" class="button" target="_blank">View Document</a>
+                        <a href="${repo.html_url}" class="button" target="_blank" rel="noopener noreferrer">View on GitHub</a>
                     </div>
                 `;
                 projectGrid.appendChild(projectCard);
             });
-        });
+        })
+        .catch(error => console.error('Error fetching repositories:', error));
 
     // Scroll animations
     const sections = document.querySelectorAll('section');
@@ -59,63 +61,40 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const explosionButton = document.getElementById('explosion-button');
-    const explosionContainer = document.getElementById('explosion-container');
+    // Delay bubble creation to allow UI to be visible first
+    setTimeout(() => {
+        const bubbleCount = 30; // Adjust the number of bubbles
+        const bubblesContainer = document.querySelector('.bubbles');
 
-    explosionButton.addEventListener('click', (event) => {
-        const explosionCount = 10; // Number of smaller explosions
-        const rect = explosionButton.getBoundingClientRect();
+        for (let i = 0; i < bubbleCount; i++) {
+            const bubble = document.createElement('div');
+            bubble.classList.add('bubble');
+            
+            // Randomize size
+            const size = Math.random() * 50 + 10; // Size between 10px and 60px
+            bubble.style.width = `${size}px`;
+            bubble.style.height = `${size}px`;
+            
+            // Randomize position
+            bubble.style.left = `${Math.random() * 100}vw`; // Position across the viewport width
+            bubble.style.animationDuration = `${Math.random() * 5 + 5}s`; // Random duration between 5s and 10s
 
-        for (let i = 0; i < explosionCount; i++) {
-            const explosion = document.createElement('div');
-            explosion.classList.add('explosion');
-
-            // Randomize position around the button
-            const offsetX = (Math.random() - 0.5) * 100; // Random offset in X direction
-            const offsetY = (Math.random() - 0.5) * 100; // Random offset in Y direction
-
-            explosion.style.left = `${rect.left + rect.width / 2 + offsetX}px`;
-            explosion.style.top = `${rect.top + rect.height / 2 + offsetY}px`;
-
-            explosionContainer.appendChild(explosion);
-
-            // Remove the explosion after the animation
-            explosion.addEventListener('animationend', () => {
-                explosion.remove();
-            });
+            bubblesContainer.appendChild(bubble);
         }
+    }, 2000); // Delay of 2000 milliseconds (2 seconds)
+
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Send the email
+        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+            .then(function() {
+                alert('Message sent successfully!');
+            }, function(error) {
+                alert('Failed to send message. Please try again later.');
+            });
+
+        // Reset the form
+        this.reset();
     });
 });
-
-function createFirework(x, y) {
-    const container = document.getElementById('fireworks-container');
-    const firework = document.createElement('div');
-    firework.className = 'firework';
-    firework.style.left = `${x}px`;
-    firework.style.top = `${y}px`;
-    container.appendChild(firework);
-
-    setTimeout(() => {
-        container.removeChild(firework);
-    }, 1000);
-}
-
-// Simulate the user clicking
-document.addEventListener('click', (event) => {
-    createFirework(event.clientX, event.clientY);
-});
-
-function createBubble() {
-    const bubble = document.createElement('div');
-    bubble.className = 'bubble';
-    bubble.style.left = `${Math.random() * window.innerWidth}px`;
-    document.body.appendChild(bubble);
-
-    // Remove the bubble after the animation
-    setTimeout(() => {
-        bubble.remove();
-    }, 5000); // Adjust duration as needed
-}
-
-// Create bubbles at intervals
-setInterval(createBubble, 1000); // Create a bubble every second
